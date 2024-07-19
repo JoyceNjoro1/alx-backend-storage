@@ -1,7 +1,1 @@
-// 0-list_databases
-// This script lists all databases in MongoDB with their sizes
-
-db.getMongo().getDBs().databases.forEach(function(database) {
-    print(database.name + "\t" + database.sizeOnDisk / (1024 * 1024 * 1024) + "GB");
-});
-
+show dbs
