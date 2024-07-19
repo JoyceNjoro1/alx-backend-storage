@@ -1,6 +1,7 @@
 // 0-list_databases
-CREATE TABLE IF NOT EXISTS users (
-	id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	email varchar(255) NOT NULL UNIQUE,
-	name varchar(255)
-)
+// This script lists all databases in MongoDB with their sizes
+
+db.getMongo().getDBs().databases.forEach(function(database) {
+    print(database.name + "\t" + database.sizeOnDisk / (1024 * 1024 * 1024) + "GB");
+});
+
